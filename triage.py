@@ -11,7 +11,7 @@ def run_triage(test_posteingang, test_isolierstation):
             #AF3 leere Dateien prüfen und löschen!
             if datei.stat().st_size == 0: # wenn die Dateigröße = 0 Byte ist, dann löschen!
                datei.unlink()
-               print(f"Die leere Datei '{datei.name}' wurde gelöscht.")
+               print(f"Die leere Datei mit 0 Byte'{datei.name}' wurde gelöscht.")
                
 
             #Af2 Dateien für Isolierstation prüfen und ggf verschieben!

@@ -41,12 +41,12 @@ def verify_tests():
 
     # Check für AF3 - wurden die leeren Dateien gelöscht?
     if not os.path.exists("test_posteingang/leerdatei.pdf") and not os.path.exists("test_posteingang/keine_endung"):
-        print("[PASS] T04 (AF3): Leere Dateien wurden gelöscht.")
+        print("[PASS] T04 (AF3): Leere Dateien mit 0 Byte wurden gelöscht.")
     else:
         print("[FAIL] T04 (AF3): Leere Dateien sind noch im Posteingang!")
 
     if not os.path.exists("test_posteingang/keine_endung") and not os.path.exists("test_posteingang/leerdatei.pdf"):
-        print("[PASS] T05 (AF3): Leere Dateien wurden gelöscht.")
+        print("[PASS] T05 (AF3): Leere Dateien mit 0 Byte wurden gelöscht.")
     else:        
         print("[FAIL] T05 (AF3): Leere Dateien sind noch im Posteingang!")
 
