@@ -11,6 +11,19 @@ Die Datei 'antrag_normal.pdf' ist unbedenklich.
 
 
 #Auswertung
+Der Ordner 'test_posteingang' existiert bereits und wird geleert.
+Der Ordner 'test_isolierstation' existiert bereits und wird geleert.
+--- Erstelle Testdateien! ---
+--- Testumgebung erfolgreich eingerichtet! ---
+Die Datei 'datei_groß.PDF' ist unbedenklich.
+Die Datei 'datei_ohne-endung' wurde in die Isolierstation verschoben.
+Die Datei 'bild.jpg' ist unbedenklich.
+Die leere Datei mit 0 Byte'leerdatei.pdf' wurde gelöscht.
+Die Datei 'virus.exe' wurde in die Isolierstation verschoben.
+Die Datei 'notiz.txt' ist unbedenklich.
+Die Datei 'update.zip' wurde in die Isolierstation verschoben.
+Die leere Datei mit 0 Byte'keine_endung' wurde gelöscht.
+Die Datei 'antrag_normal.pdf' ist unbedenklich.
 --- STARTE TEST-AUSWERTUNG ---
 [PASS] T01a (AF1): antrag_normal.pdf ist weiterhin im Posteingang.
 [PASS] T01b (AF1): notiz.txt ist weiterhin im Posteingang.
