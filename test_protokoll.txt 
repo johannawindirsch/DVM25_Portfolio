@@ -1,0 +1,10 @@
+=== START DER AUTOMATISCHEN AUSWERTUNG ===
+[PASS] T06 - AF4: Datum korrekt im Dateinamen gefunden.
+[PASS] T07 - AF5: Nummer 001 existiert.
+[PASS] T07a - AF5: Nummerierung korrekt auf 002.
+[PASS] T07b - AF5: Split-Logik zur Nummern-Erkennung erfolgreich.
+[PASS] T08 - AF6: Unterverzeichnis 'Gehaltsnachweise_2026' erstellt.
+[PASS] T08a - AF6: Datei erfolgreich in Akte verschoben.
+[PASS] T08b - AF6: Zweite Akte 'Projekt_NEU' erfolgreich erstellt.
+[PASS] T09 - AF7: Logik bereit für interaktive Abfrage.
+=== AUSWERTUNG BEENDET ===
