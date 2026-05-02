@@ -14,6 +14,8 @@
 
 # Level 2 : Registrierung und Aktenanforderung 
 
+| ID | AF | Datei / Eingabe | Eigenschaft | Erwartetes Ergebnis |
+|:---|:---|:---|:---|:---|
 | T06 | AF4 | rechnung_hannah.pdf | neue PDF Datei | wird zu 2024-11-20_001_rechnung_hannah.pdf |
 | T07 | AF5 | Start bei leeren Ordner | /tagespost ist leer | Start Sequenznummer bei 001 |
 | T07a | AF5 | /tagespost hat Inhalt | enthält Sequenznummer 001 | neue datei erhält Sequenznummer 002 |
