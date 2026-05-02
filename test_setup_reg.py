@@ -40,4 +40,4 @@ f3.write("Ich besetze die Nummer 001 von heute.")
 f3.close()  
 
 print("Schritt 4: Datei '" + name_vorgänger + "' in die Tagespost gelegt.")
-print("--- Setup beendet: Alles ist bereit für Task 3! ---")
+print("--- Setup beendet! ---")
