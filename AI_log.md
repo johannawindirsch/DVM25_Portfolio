@@ -27,3 +27,4 @@
 
 # Allgemein: Ich habe mir Level 2 öfter die kleinen Schritte sowie die Anforderungen erklären lassen müssen, weil mir teilweise der Durchblick gefehlt hat und ich gar nicht wusste, was raus kommen soll (das hat bei Level 1 besser für mich geklappt) | insofern KI als Erklärbuddy sehr sinnvoll und hilfreich 
 
+# Allgemein: Ich habe ebenso aus spielerischen Gründen oft auf TAB gedrückt, um zu schauen, was der COPilot so macht | Fazit: Cool zum Experimentieren. Manchmal sind die Dinge, die er für Print vorschlägt komisch formuliert, aber ich habe es dennoch so gelassen | Fazit: sehr cool! Aber man muss aufpassen WAS er genau macht und was sein Ziel ist!
