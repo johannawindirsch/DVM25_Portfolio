@@ -5,3 +5,25 @@
 # KI gebeten mir bei der Testumgebung zu helfen (10.April),weil ich if/for/else falsch eingerückt hatte | KI war hierbei sehr hilfreich! | hat funktioniert
 # KI gebeten zu erklären, wie ich die touch-Funktion verwende (10.April) | hilfreich | hat funktioniert
 # KI mir Aufgabe 5 erklären lassen, was ich vereinfacht tun soll und was ich in die test_run.log kopieren soll | KI war hierbei ebenfalls sehr hilfreich (11.April) | hat (hoffentlich) funktioniert
+
+# Level 2
+# KI gebeten mir zu erklären, warum auf einmal keine Dateien mehr in VisualCode zu sehen waren (2. Mai) | KI semi hilfreich | ich habe selbst herausgefunden, dass ich die einzelnen Dateien nochmal hochladen musste, den Fehler wieso das passiert ist, habe ich nicht gefunden
+
+# (Allgemein) Ki gebeten, mir alle Aufgaben so einfach wie möglich zu erklärem | KI sehr hilfreich und sehr geduldig | ich habe mir insgesamt über 1,5h die Aufgaben Schritt für Schritt erklären lassen mit verschiedenen Ansätzen und Ideen | sehr hilfreich, da ich dadurch einen Durchblick bekommen habe 
+
+# KI gebeten mir step by step, so feingliedrig wie möglich zu erklären, wie ich TASK 2 erledigen soll, weil ich es nicht verstanden habe | KI teilweise hilfreich, teilweise halluziniert | Ich habe sehr sehr lange für diese Aufgabe gebraucht und war mir zeitweise auch nicht sicher, ob das richtig ist | unsicher, ob es gut funktioniert hat 
+
+# bei Task 3: siehe vorheriges 
+
+# Task4: KI wieder gebeten, es mir so feingliedrig wie möglich zu erklären, ohne mir Dinge vorzukauen | KI sehr hilfreich, aber wieder das Problem der Halluzination | ebenfalls unsicher, ob es die Anforderungen erfüllt hat 
+
+# Task5: Habe ich mir von der KI komplett erklären lassen für "DUMME", weil ich es nicht kapiert habe, was ich machen muss und wie ich es machen muss | sehr hilfreich, dennoch unsicher, ob mein Outcome richtig ist, da er mir relativ kurz erscheint | 
+
+# Allgemein: Ich habe mir teilweise von der KI meinen Code kontrollieren lassen, um zu schauen, wo der Fehler in meiner Logik ist | hierbei KI SEHR hilfreich, da er Fehler schneller ausfindig macht als ich | 
+
+# Allgemein: Ich habe mir nochmal die Commits erklären lassen, da ich es bei Level 1 falsch gemacht habe | diese Mal hat es besser geklappt (hoffentlich) | 
+
+# Allgemein: ich habe mir das .gitignore erklären lassen, aber nachdem ich es gemacht habe, sind alle meine Dateien verschwunden, weshalb ich es dann doch aus Sicherheitsgründen nicht umgesetzt habe | KI also semi hilfreich 
+
+# Allgemein: Ich habe mir Level 2 öfter die kleinen Schritte sowie die Anforderungen erklären lassen müssen, weil mir teilweise der Durchblick gefehlt hat und ich gar nicht wusste, was raus kommen soll (das hat bei Level 1 besser für mich geklappt) | insofern KI als Erklärbuddy sehr sinnvoll und hilfreich 
+
