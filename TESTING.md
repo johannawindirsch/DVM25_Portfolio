@@ -24,3 +24,13 @@
 | T08a | AF6 | Akte wird verschoben | Abschluss Aktion | Datei wird erfolgreich von /tagespost zu akten/Gehaltsnachweise_2026/ verschoben | 
 | T08b | AF6 | Projekt_NEU | Zweite Akte | Erstellen neuer Aktenordner und Dateien werden dorthin verschoben | 
 | T09 | AF7 | 2 Dateien im Posteingang | Interaktive Abfrage | Skript wird bei der Abfrage gestoppt und fragt nach Aktenzeichen | 
+
+# Level 3: Testdefinitionen festlegen 
+
+| ID | AF | Testbedingungen | Erwartetes Ergebnis |
+|:---|:---|:---|:---|
+| T10 | AF8 | führt Skript aus und ordnet eine Datei einer Akte zu | Im Zielordner der Akte erscheint eine neue .json-Datei mit dem gleichen Namen wie das Dokument |
+| T11 | AF9 |  .json-Datei existiert | Datei enthält die Keys  dokumenten_typ (initial: "Unbekannt") und erstellungsdatum |
+| T12 | AF10 |  .json-Datei existiert | Datei enthält key "aufbewahrung_bis" |
+| T13 | AF11 | .json-Datei existiert | Datei enthält key vertraulichkeit | 
+
