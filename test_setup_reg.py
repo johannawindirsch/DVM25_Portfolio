@@ -1,4 +1,5 @@
 import os 
+import json
 from datetime import date 
 from akten_management import run_registration, ordne_akte_zu
 
@@ -108,6 +109,45 @@ try:
 
     # T09: Abschluss
     print("[PASS] T09 - AF7: Logik bereit für interaktive Abfrage.")
+
+    ## Level 3:
+    # neue Pfade für die JSON-Dateien erstellen
+
+    rechnung_json_name = rechnung_neu.rsplit(".", 1)[0] + ".json"
+    rechnung_json_pfad = "akten/Gehaltsnachweise_2026/" + rechnung_json_name
+
+    antrag_json_name = antrag_neu.rsplit(".", 1)[0] + ".json"
+    antrag_json_pfad = "akten/Projekt_NEU/" + antrag_json_name
+
+    #  T10: Existenz-Prüfung
+
+    if os.path.exists(rechnung_json_pfad) and os.path.exists(antrag_json_pfad):
+        print("[PASS] T10 - AF8: .json-Begleitdateien existieren im jeweiligen Aktenordner.")
+    else:
+        print("[FAIL] T10 - AF8: Eine oder beide .json-Dateien wurden nicht erstellt!")
+
+    # T11 & T12: Keys in den JSON-Dateien 
+
+    if os.path.exists(rechnung_json_pfad):
+        with open(rechnung_json_pfad, "r", encoding="utf-8") as json_datei:
+            metadaten = json.load(json_datei)
+        
+        # Prüfung der von uns definierten Keys
+        if "dokumenten_typ" in metadaten and "erstellungsdatum" in metadaten:
+            print("[PASS] T11- AF9: Keys 'dokumenten_typ' und 'erstellungsdatum' erfolgreich verifiziert.")
+        else:
+            print("[FAIL] T11- AF9: Pflichtfelder fehlen im JSON-Dictionary!")
+
+        if "aufbewahrung_bis" in metadaten:
+            print("[PASS] T12- AF10: Key 'aufbewahrung_bis' für Löschfristen (US2) erfolgreich verifiziert.")
+        else:
+            print("[FAIL] T12- AF10: Key 'aufbewahrung_bis' fehlt!")
+
+        if "vertraulichkeit" in metadaten:
+            print("[PASS] T13- AF11: Key 'vertraulichkeit' für Datenschutz (US3) erfolgreich verifiziert.")
+        else:
+            print("[FAIL] T13- AF11: Key 'vertraulichkeit' fehlt!")
+
 
 except Exception as e:
     # Falls das Programm abstürzt (z.B. Funktion nicht gefunden)

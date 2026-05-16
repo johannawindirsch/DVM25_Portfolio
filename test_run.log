@@ -35,3 +35,26 @@ Die Datei 'antrag_normal.pdf' ist unbedenklich.
 [PASS] T04 (AF3): Leere Dateien mit 0 Byte wurden gelöscht.
 [PASS] T05 (AF3): Leere Dateien mit 0 Byte wurden gelöscht.
 --- ENDE TEST-AUSWERTUNG ---
+
+
+#Level 3 Auswrertung 
+--- STARTE TEST-SETUP ---
+Ordner 'posteingang', 'tagespost' und 'akten' wurden erstellt.
+Heutiges Datum: 2026-5-16
+ Testdateien 'rechnung_hannah.pdf' und 'antrag_studium.pdf' wurden im Ordner 'posteingang' erstellt.
+Schritt 4: Datei '2026-5-16_001_altes_dokument.txt' in die Tagespost gelegt.
+--- Setup beendet! ---
+=== START DER AUTOMATISCHEN AUSWERTUNG ===
+[PASS] T06 - AF4: Datum korrekt im Dateinamen gefunden.
+[PASS] T07 - AF5: Nummer 001 existiert.
+[PASS] T07a - AF5: Nummerierung korrekt auf 002.
+[PASS] T07b - AF5: Split-Logik zur Nummern-Erkennung erfolgreich.
+[PASS] T08 - AF6: Unterverzeichnis 'Gehaltsnachweise_2026' erstellt.
+[PASS] T08a - AF6: Datei erfolgreich in Akte verschoben.
+[PASS] T08b - AF6: Zweite Akte 'Projekt_NEU' erfolgreich erstellt.
+[PASS] T09 - AF7: Logik bereit für interaktive Abfrage.
+[PASS] T10 - AF8: .json-Begleitdateien existieren im jeweiligen Aktenordner.
+[PASS] T11- AF9: Keys 'dokumenten_typ' und 'erstellungsdatum' erfolgreich verifiziert.
+[PASS] T12- AF10: Key 'aufbewahrung_bis' für Löschfristen (US2) erfolgreich verifiziert.
+[PASS] T13- AF11: Key 'vertraulichkeit' für Datenschutz (US3) erfolgreich verifiziert.
+=== AUSWERTUNG BEENDET ===
