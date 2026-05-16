@@ -1,4 +1,5 @@
 import os 
+import json
 from datetime import date 
 
 def run_registration(eingang_ordner, tagespost_ordner):
@@ -53,6 +54,21 @@ def ordne_akte_zu(dateipfad_quelle, aktenzeichen, akten_basis_ordner):
     ziel_pfad = ziel_ordner + "/" + dateiname
     os.rename(dateipfad_quelle, ziel_pfad)
 
+    # Datum aus dem Dateinamen extrahieren 
+    datum_aus_name = dateiname.split("_")[0]
 
+    # Metadaten erstellen! 
+    metadaten = {
+        "dokumenten_typ": "Unbekannt",       
+        "erstellungsdatum": datum_aus_name,  
+        "aufbewahrung_bis": "2036-01-01",     
+        "vertraulichkeit": "intern"           
+    }
 
-    
+    # Json - Endungen festlegen! 
+
+    name_ohne_endung = dateiname.rsplit(".", 1)[0]
+    json_pfad = ziel_ordner + "/" + name_ohne_endung + ".json"
+
+    with open(json_pfad, "w") as json_datei:
+        json.dump(metadaten, json_datei, indent=4)
