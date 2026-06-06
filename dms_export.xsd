@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="dms_export">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="export_datum" type="xs:dateTime"/>
+                <xs:element name="akte" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="akten_name" type="xs:string"/>
+                            <xs:element name="dokument" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="dateiname" type="xs:string"/>
+                                        <xs:element name="metadaten">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="dokumenten_typ" type="xs:string"/>
+                                                    <xs:element name="registrierungs_datum" type="xs:date"/>
+                                                    <xs:element name="aufbewahrung_bis" type="xs:date"/>
+                                                    <xs:element name="vertraulichkeit" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
