@@ -34,3 +34,13 @@
 | T12 | AF10 |  .json-Datei existiert | Datei enthält key "aufbewahrung_bis" |
 | T13 | AF11 | .json-Datei existiert | Datei enthält key vertraulichkeit | 
 
+
+
+# Level 4: Testdef. festlegen-->  XML-Export und Validierung
+
+| ID | AF | Testbedingungen | Erwartetes Ergebnis |
+|:---|:---|:---|:---|
+| T14 | AF12/13 | Überprüfung der XSD-Struktur und Datenmodell-Konformität | XML-Struktur entspricht exakt den Vorgaben aus `dms_export.xsd` (Pflichtfelder/Typen). |
+| T15 | AF14 | Export aus aktuellem DMS-Datenbestand | XML-Datei wird erstellt, enthält alle notwendigen Akten- und Dokumenteninformationen. |
+| T16 | AF15 | Validierung der XML-Datei gegen das XSD-Schema | Validierung erfolgreich ("Valid XML"), Schema-Konformität bestätigt. |
+| T17 | AF15 | Validierung einer manipulierten/fehlerhaften XML-Datei | Validierung schlägt fehl ("Invalid XML"), Fehler wird in Konsole/Log ausgegeben. |
