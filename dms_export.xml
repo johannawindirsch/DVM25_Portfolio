@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dms_export>
+    <export_datum>2026-06-07T03:04:10.747673</export_datum>
+    <akte>
+        <akten_name>Gehaltsnachweise_2026</akten_name>
+        <dokument>
+            <dateiname>2026-06-07_002_rechnung_hannah</dateiname>
+            <metadaten>
+                <dokumenten_typ>Unbekannt</dokumenten_typ>
+                <registrierungs_datum>2026-06-07</registrierungs_datum>
+                <aufbewahrung_bis>2036-01-01</aufbewahrung_bis>
+                <vertraulichkeit>intern</vertraulichkeit>
+            </metadaten>
+        </dokument>
+    </akte>
+    <akte>
+        <akten_name>Projekt_NEU</akten_name>
+        <dokument>
+            <dateiname>2026-06-07_001_antrag_studium</dateiname>
+            <metadaten>
+                <dokumenten_typ>Unbekannt</dokumenten_typ>
+                <registrierungs_datum>2026-06-07</registrierungs_datum>
+                <aufbewahrung_bis>2036-01-01</aufbewahrung_bis>
+                <vertraulichkeit>intern</vertraulichkeit>
+            </metadaten>
+        </dokument>
+    </akte>
+</dms_export>
