@@ -6,7 +6,7 @@ def run_registration(eingang_ordner, tagespost_ordner):
     heute = date.today()
 
     # Datum erstellen!
-    datum_string = str(heute.year) + "-" + str(heute.month) + "-" + str(heute.day)
+    datum_string = heute.isoformat()
     
     dateien_im_eingang = os.listdir(eingang_ordner)
     
