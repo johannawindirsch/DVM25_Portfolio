@@ -34,3 +34,21 @@
 ## Reflexion zu Level 3 (Task 4 & Task 5)
 
 # Bei der Umsetzung der Metadatenerstellung habe ich die KI schrittweise mit den in Task 2 definierten funktionalen Anforderungen gefüttert. Da ich so viel wie möglich verstehen will, aber gleichzeitig auch auf die Hilfe angewiesen bin, beinhalten meine Prompts immer "bitte schlüssel es mir schritt für schritt auf und halte dich exakt an die vorgaben"! KI ist zwar in der Hinsicht ein guter Lehrer, aber man muss vorallem drauf achten, dass er sich auch WIRKLICH daran hält, was man will. So hilft es mir beispielsweise jede Aufgabe ganz exakt und langsam durchzugehen und nicht wahllos einzukopieren. Wenn ich etwas nicht verstehe, frage ich zur Not 10 Mal nach oder verwendet den Prompt, dass Sie es so erklären soll, dass es Menschen ohne Vorkenntnisse verstehen sollen - das hilft!
+
+## Level 4
+## Reflexionsfragen zu Level 4
+
+## Wie haben Sie die KI beim Entwurf des Datenmodells genutzt?
+
+# Ich habe die KI als Unterstützung genutzt, um die Ordnerstruktur und die JSON-Metadaten unseres DMS in eine saubere XML-Baumstruktur zu bringen. Gemeinsam haben wir entschieden, das Modell komplett über verschachtelte Elemente (Tags) statt über Attribute aufzubauen. So fängt alles beim Hauptelement `<dms_export>` an, geht über `<akte>` und `<dokument>` und packt die eigentlichen Werte ordentlich in einen `<metadaten>`-Container.Die KI hat mir außerdem dabei geholfen, die Felder aus den JSON-Dateien richtig zuzuordnen. Mein Python-Code nimmt zum Beispiel das `"erstellungsdatum"` aus der JSON und schreibt es im XML in das Tag `<registrierungs_datum>`, damit es genau zu unserem XSD-Schema passt. Wichtig war auch die Entscheidung, die echten PDFs nicht in das XML zu packen, um das System nicht zu bremsen oder unnötig zu belasten. Zuletzt hat sie mir geholfen, den Code mit der `.get()`-Methode abzusichern. So läuft das Skript stabil und stürzt nicht ab, falls in einer JSON-Datei mal ein Feld fehlt.
+
+---
+
+## Wie haben Sie geprüft, dass das XSD wirklich zu Ihrem Modell passt?
+
+# Weil die exportierte Datei fehlerfrei durchging und mein Skript die Meldung `ERFOLG: XML ist valide!` ausgegeben hat, war der Beweis erbracht, dass das Schema exakt zu unserem exportierten Modell passt. Ich hatte aus den vorherigen Leveln auch einen Fehler, wodurch auch mal nicht valide kam. So habe ich germekrt, dass ich mehr oder weniger funktioniert. 
+
+---
+### Welche Teile mussten Sie selbst verstehen, um das Schema mündlich begründen zu können?
+
+# Alles tatsächlich. Sobald man etwas nicht versteht, kommen die Fehler und eben wenn man davor mehrere Level gemact hat, MUSS man zumindest ein wenig Verständnis dafür aufbringen. Zu 100prozent habe ich es dennoch nicht verstanden bzw teile nicht richtig verstandne, dass gebe ich zu! Aber ein Grundverständnis habe ich mir erarbeitet!
