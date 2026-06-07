@@ -1,0 +1,12 @@
+#Task4
+
+
+--- STARTE TEST-AUSWERTUNG ---
+--- Starte Export ---
+XML-Datei erfolgreich unter 'test_export.xml' erstellt.
+Starte XSD-Validierung...
+ERFOLG: XML ist valide!
+[PASS] T15: Export aus DMS-Datenbestand erfolgreich.
+[PASS] T14: XML-Struktur entspricht exakt den Vorgaben aus dms_export.xsd.
+[PASS] T16: Validierung der XML gegen XSD erfolgreich.
+[PASS] T17: Fehlerhafte XML wurde korrekt abgelehnt.
