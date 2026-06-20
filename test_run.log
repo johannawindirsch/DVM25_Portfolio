@@ -58,3 +58,32 @@ Schritt 4: Datei '2026-5-16_001_altes_dokument.txt' in die Tagespost gelegt.
 [PASS] T12- AF10: Key 'aufbewahrung_bis' für Löschfristen (US2) erfolgreich verifiziert.
 [PASS] T13- AF11: Key 'vertraulichkeit' für Datenschutz (US3) erfolgreich verifiziert.
 === AUSWERTUNG BEENDET ===
+
+#Level 5 PNG Datei 
+
+Der Ordner 'test_posteingang' existiert bereits und wird geleert.
+Der Ordner 'test_isolierstation' existiert bereits und wird geleert.
+--- Erstelle Testdateien! ---
+--- Testumgebung erfolgreich eingerichtet! ---
+Die Datei 'bild_neu.png' ist unbedenklich.
+Die Datei 'datei_groß.PDF' ist unbedenklich.
+Die Datei 'datei_ohne-endung' wurde in die Isolierstation verschoben.
+Die Datei 'bild.jpg' ist unbedenklich.
+Die leere Datei mit 0 Byte'leerdatei.pdf' wurde gelöscht.
+Die Datei 'virus.exe' wurde in die Isolierstation verschoben.
+Die Datei 'notiz.txt' ist unbedenklich.
+Die Datei 'update.zip' wurde in die Isolierstation verschoben.
+Die leere Datei mit 0 Byte'keine_endung' wurde gelöscht.
+Die Datei 'antrag_normal.pdf' ist unbedenklich.
+--- STARTE TEST-AUSWERTUNG ---
+[PASS] T01a (AF1): antrag_normal.pdf ist weiterhin im Posteingang.
+[PASS] T01b (AF1): notiz.txt ist weiterhin im Posteingang.
+[PASS] T01c (AF1): bild.jpg ist weiterhin im Posteingang.
+[PASS] T01d (AF1): datei_groß.PDF ist weiterhin im Posteingang.
+[PASS] T18 (AF17): bild_neu.png ist weiterhin im Posteingang.
+[PASS] T02a (AF2): virus.exe ist in der Isolierstation.
+[PASS] T02b (AF2): update.zip ist in der Isolierstation.
+[PASS] T03 (AF2): datei_ohne-endung ist in der Isolierstation.
+[PASS] T04 (AF3): Leere Dateien mit 0 Byte wurden gelöscht.
+[PASS] T05 (AF3): Leere Dateien mit 0 Byte wurden gelöscht.
+--- ENDE TEST-AUSWERTUNG ---
