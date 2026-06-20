@@ -44,3 +44,10 @@
 | T15 | AF14 | Export aus aktuellem DMS-Datenbestand | XML-Datei wird erstellt, enthält alle notwendigen Akten- und Dokumenteninformationen. |
 | T16 | AF15 | Validierung der XML-Datei gegen das XSD-Schema | Validierung erfolgreich ("Valid XML"), Schema-Konformität bestätigt. |
 | T17 | AF15 | Validierung einer manipulierten/fehlerhaften XML-Datei | Validierung schlägt fehl ("Invalid XML"), Fehler wird in Konsole/Log ausgegeben. |
+
+# Level 5 Testfallerweiterung 
+
+| ID | AF | Testbedingungen | Erwartetes Ergebnis |
+|:---|:---|:---|:---|
+| T18 | AF17 |  Datei mit erlaubter Endung .png liegt im Posteingang (z. B. bild_neu.png) | bleibt im posteingang/ |
+| T19 | AF17 | Regressionstest (kein neuer Code nötig, siehe WARTUNG.md) | T02a/T02b/T03 bestätigen weiterhin korrekte Isolierung |
