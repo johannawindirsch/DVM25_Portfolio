@@ -22,6 +22,11 @@ def verify_tests():
         print("[PASS] T01d (AF1): datei_groß.PDF ist weiterhin im Posteingang.")
     else:
         print("[FAIL] T01d (AF1): datei_groß.PDF fehlt im Posteingang!") 
+    
+    if os.path.exists("test_posteingang/bild_neu.png"):
+        print("[PASS] T18 (AF17): bild_neu.png ist weiterhin im Posteingang.")
+    else:
+        print("[FAIL] T18 (AF17): bild_neu.png fehlt im Posteingang!")
 
     # Check für AF2 - wurde die gefährliche Datei in die Isolierstation verschoben?
     if os.path.exists("test_isolierstation/virus.exe"):

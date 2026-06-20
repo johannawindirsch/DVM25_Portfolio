@@ -29,6 +29,7 @@ def setup_tests(): # Pfade definieren
     (posteingang / "antrag_normal.pdf").write_text("Testinhalt")
     (posteingang / "notiz.txt").write_text("Testinhalt")
     (posteingang / "bild.jpg").write_text("Testinhalt")
+    (posteingang / "bild_neu.png").write_text("Testinhalt")
     (posteingang / "datei_groß.PDF").write_text("Testinhalt")
 
 #AF2 Dateien für die Isolierstation: von T02a bis T03 (> 0 Byte)
