@@ -51,3 +51,32 @@
 |:---|:---|:---|:---|
 | T18 | AF17 |  Datei mit erlaubter Endung .png liegt im Posteingang (z. B. bild_neu.png) | bleibt im posteingang/ |
 | T19 | AF17 | Regressionstest (kein neuer Code nötig, siehe WARTUNG.md) | T02a/T02b/T03 bestätigen weiterhin korrekte Isolierung |
+
+**AF18 – Feldumbenennung:** Das Metadatenfeld `erstellungsdatum` wird zu `registrierungsdatum` umbenannt. Der bisherige Name war fachlich ungenau, da das Feld nie das tatsächliche Erstellungsdatum eines Dokuments speichert, sondern das Datum seiner Registrierung im DM. Der neue Name ist präziser und stimmt zudem mit ### 1. Systemanalyse & Entscheidungen
+
+**Wo wird der Feldname im Code erzeugt oder gelesen?**
+- Erzeugt: in `akten_management.py`, Funktion `ordne_akte_zu()`, wo das Python-Dictionary für die JSON-Metadaten befüllt und per `json.dump()` geschrieben wird.
+- Gelesen: in `xml_export.py`, Funktion `exportiere_dms_als_xml()`, wo die JSON-Dateien eingelesen werden, um die XML-Struktur zu generieren.
+
+**Was passiert mit alten JSON-Metadaten-Dateien, die noch den bisherigen Feldnamen enthalten?**
+Sie werden nicht ignoriert. Der Code in `xml_export.py` prüft beim Einlesen zuerst, ob der neue Key `registrierungsdatum` vorhanden ist. Fehlt er, wird auf den alten Key `erstellungsdatum` zurückgegriffen.
+
+**Muss der XML-Export angepasst werden?**
+Die XML-Struktur bleibt unverändert – das Element heißt weiterhin `registrierungs_datum`. Der Code in `xml_export.py` muss aber angepasst werden, um den neuen JSON-Key zu lesen und die Fallback-Logik für alte Dateien umzusetzen.
+
+**Muss das XSD-Schema angepasst werden?**
+Nein. Da sich das XML-Element nicht ändert, bleibt `dms_export.xsd` unverändert und weiterhin gültig.
+
+**Welche Tests müssen geändert oder ergänzt werden?**
+- T11 wird auf den neuen Feldnamen `registrierungsdatum` umgestellt.
+- Neuer Testfall --> eine JSON-Datei mit dem alten Key `erstellungsdatum` wird angelegt und geprüft, dass sie trotzdem korrekt verarbeitet und exportiert wird.
+
+---
+
+### 2. Strategie für den Umgang mit bestehenden Daten
+
+NEUE Dokumente  → akten_management.py schreibt "registrierungsdatum"
+ALTE Dokumente  → liegen schon mit "erstellungsdatum" auf der Platte, bleiben so
+                       ↓
+        xml_export.py liest BEIDE Varianten beim Exportdem bereits bestehenden XML-Element `registrierungs_datum` überein.
+
