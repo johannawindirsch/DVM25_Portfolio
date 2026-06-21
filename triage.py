@@ -1,10 +1,10 @@
 from pathlib import Path
+ERLAUBTE_ENDUNGEN = [".pdf", ".txt", ".jpg", ".png"]
 
 def run_triage(test_posteingang, test_isolierstation):
     posteingang = Path(test_posteingang)
     isolierstation = Path(test_isolierstation)
 
-    erlaubte_endungen = [".pdf", ".txt", ".jpg", ".png"]
 
     for datei in posteingang.iterdir(): 
         if datei.is_file():
@@ -16,7 +16,7 @@ def run_triage(test_posteingang, test_isolierstation):
 
             #Af2 Dateien für Isolierstation prüfen und ggf verschieben!
 
-            elif datei.suffix.lower() not in erlaubte_endungen or not datei.suffix: # wenn die Endung nicht in der Liste der erlaubten Endungen ist ODER die Datei keine Endung hat, dann verschieben!
+            elif datei.suffix.lower() not in ERLAUBTE_ENDUNGEN or not datei.suffix: # wenn die Endung nicht in der Liste der erlaubten Endungen ist ODER die Datei keine Endung hat, dann verschieben!
                 zielpfad = isolierstation / datei.name
                 datei.rename(zielpfad) # verschiebt die Datei in die Isolierstation
                 print(f"Die Datei '{datei.name}' wurde in die Isolierstation verschoben.")
