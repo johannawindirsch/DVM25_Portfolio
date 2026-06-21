@@ -7,10 +7,10 @@ def setup_test_dms():
     # Test-Bestand und Test-Metadaten erzeugen
     if os.path.exists("test_akten"):
         shutil.rmtree("test_akten")
-    os.makedirs("test_akten/Projekt_X/Dokument_A")
+    os.makedirs("test_akten/Projekt_X")
     # JSON-Datei mit Metadaten erstellen
-    with open("test_akten/Projekt_X/Dokument_A/test_doc.json", "w", encoding="utf-8") as f:
-        f.write('{"dokumenten_typ": "Rechnung", "erstellungsdatum": "2026-06-07", "aufbewahrung_bis": "2036-01-01", "vertraulichkeit": "intern"}')
+    with open("test_akten/Projekt_X/test_doc.json", "w", encoding="utf-8") as f:
+        f.write('{"dokumenten_typ": "Rechnung", "erstellungsdatum": "2026-06-08", "aufbewahrung_bis": "2036-01-01", "vertraulichkeit": "intern"}')
 
 def run_tests():
     print("--- STARTE TEST-AUSWERTUNG ---")

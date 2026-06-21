@@ -44,9 +44,9 @@ def exportiere_dms_als_xml(akten_basis_ordner, ziel_xml_pfad, schema_pfad):
                     
                     meta_node = ET.SubElement(dok_node, "metadaten")
                     ET.SubElement(meta_node, "dokumenten_typ").text = data.get("dokumenten_typ", "Unbekannt")
-                    
-                   
-                    ET.SubElement(meta_node, "registrierungs_datum").text = data.get("erstellungsdatum", "2026-06-07")
+
+                    ET.SubElement(meta_node, "registrierungs_datum").text = \
+                        data.get("registrierungsdatum", data.get("erstellungsdatum", "2026-06-07"))
                     ET.SubElement(meta_node, "aufbewahrung_bis").text = data.get("aufbewahrung_bis", "2036-01-01")
                     ET.SubElement(meta_node, "vertraulichkeit").text = data.get("vertraulichkeit", "intern")
 

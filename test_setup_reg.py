@@ -133,8 +133,8 @@ try:
             metadaten = json.load(json_datei)
         
         # Prüfung der von uns definierten Keys
-        if "dokumenten_typ" in metadaten and "erstellungsdatum" in metadaten:
-            print("[PASS] T11- AF9: Keys 'dokumenten_typ' und 'erstellungsdatum' erfolgreich verifiziert.")
+        if "dokumenten_typ" in metadaten and "registrierungsdatum" in metadaten:
+            print("[PASS] T11- AF9: Keys 'dokumenten_typ' und 'registrierungsdatum' erfolgreich verifiziert.")
         else:
             print("[FAIL] T11- AF9: Pflichtfelder fehlen im JSON-Dictionary!")
 

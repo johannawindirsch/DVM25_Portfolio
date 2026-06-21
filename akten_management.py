@@ -60,7 +60,7 @@ def ordne_akte_zu(dateipfad_quelle, aktenzeichen, akten_basis_ordner):
     # Metadaten erstellen! 
     metadaten = {
         "dokumenten_typ": "Unbekannt",       
-        "erstellungsdatum": datum_aus_name,  
+        "registrierungsdatum": datum_aus_name,  
         "aufbewahrung_bis": "2036-01-01",     
         "vertraulichkeit": "intern"           
     }
