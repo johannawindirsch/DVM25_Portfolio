@@ -87,3 +87,64 @@ Die Datei 'antrag_normal.pdf' ist unbedenklich.
 [PASS] T04 (AF3): Leere Dateien mit 0 Byte wurden gelöscht.
 [PASS] T05 (AF3): Leere Dateien mit 0 Byte wurden gelöscht.
 --- ENDE TEST-AUSWERTUNG ---
+
+#Level 5 Auswertung Task3
+
+Der Ordner 'test_posteingang' existiert bereits und wird geleert.
+Der Ordner 'test_isolierstation' existiert bereits und wird geleert.
+--- Erstelle Testdateien! ---
+--- Testumgebung erfolgreich eingerichtet! ---
+Die Datei 'bild_neu.png' ist unbedenklich.
+Die Datei 'datei_groß.PDF' ist unbedenklich.
+Die Datei 'datei_ohne-endung' wurde in die Isolierstation verschoben.
+Die Datei 'bild.jpg' ist unbedenklich.
+Die leere Datei mit 0 Byte'leerdatei.pdf' wurde gelöscht.
+Die Datei 'virus.exe' wurde in die Isolierstation verschoben.
+Die Datei 'notiz.txt' ist unbedenklich.
+Die Datei 'update.zip' wurde in die Isolierstation verschoben.
+Die leere Datei mit 0 Byte'keine_endung' wurde gelöscht.
+Die Datei 'antrag_normal.pdf' ist unbedenklich.
+--- STARTE TEST-AUSWERTUNG ---
+[PASS] T01a (AF1): antrag_normal.pdf ist weiterhin im Posteingang.
+[PASS] T01b (AF1): notiz.txt ist weiterhin im Posteingang.
+[PASS] T01c (AF1): bild.jpg ist weiterhin im Posteingang.
+[PASS] T01d (AF1): datei_groß.PDF ist weiterhin im Posteingang.
+[PASS] T18 (AF17): bild_neu.png ist weiterhin im Posteingang.
+[PASS] T02a (AF2): virus.exe ist in der Isolierstation.
+[PASS] T02b (AF2): update.zip ist in der Isolierstation.
+[PASS] T03 (AF2): datei_ohne-endung ist in der Isolierstation.
+[PASS] T04 (AF3): Leere Dateien mit 0 Byte wurden gelöscht.
+[PASS] T05 (AF3): Leere Dateien mit 0 Byte wurden gelöscht.
+--- ENDE TEST-AUSWERTUNG ---
+hannah@MacBookAir DVM25_Portfolio % /usr/local/bin/python3 /Users/hannah/Desktop/DVM25_Portfolio/test_setup_reg.py
+--- STARTE TEST-SETUP ---
+Ordner 'posteingang', 'tagespost' und 'akten' wurden erstellt.
+Heutiges Datum: 2026-6-21
+ Testdateien 'rechnung_hannah.pdf' und 'antrag_studium.pdf' wurden im Ordner 'posteingang' erstellt.
+Schritt 4: Datei '2026-6-21_001_altes_dokument.txt' in die Tagespost gelegt.
+--- Setup beendet! ---
+=== START DER AUTOMATISCHEN AUSWERTUNG ===
+[PASS] T06 - AF4: Datum korrekt im Dateinamen gefunden.
+[PASS] T07 - AF5: Nummer 001 existiert.
+[PASS] T07a - AF5: Nummerierung korrekt auf 002.
+[PASS] T07b - AF5: Split-Logik zur Nummern-Erkennung erfolgreich.
+[PASS] T08 - AF6: Unterverzeichnis 'Gehaltsnachweise_2026' erstellt.
+[PASS] T08a - AF6: Datei erfolgreich in Akte verschoben.
+[PASS] T08b - AF6: Zweite Akte 'Projekt_NEU' erfolgreich erstellt.
+[PASS] T09 - AF7: Logik bereit für interaktive Abfrage.
+[PASS] T10 - AF8: .json-Begleitdateien existieren im jeweiligen Aktenordner.
+[PASS] T11- AF9: Keys 'dokumenten_typ' und 'registrierungsdatum' erfolgreich verifiziert.
+[PASS] T12- AF10: Key 'aufbewahrung_bis' für Löschfristen (US2) erfolgreich verifiziert.
+[PASS] T13- AF11: Key 'vertraulichkeit' für Datenschutz (US3) erfolgreich verifiziert.
+=== AUSWERTUNG BEENDET ===
+hannah@MacBookAir DVM25_Portfolio % /usr/local/bin/python3 /Users/hannah/Desktop/DVM25_Portfolio/test_xml_export.py
+--- STARTE TEST-AUSWERTUNG ---
+--- Starte Export ---
+XML-Datei erfolgreich unter 'test_export.xml' erstellt.
+Starte XSD-Validierung...
+ERFOLG: XML ist valide!
+[PASS] T15: Export aus DMS-Datenbestand erfolgreich.
+[PASS] T14: XML-Struktur entspricht exakt den Vorgaben aus dms_export.xsd.
+[PASS] T16: Validierung der XML gegen XSD erfolgreich.
+[PASS] T17: Fehlerhafte XML wurde korrekt abgelehnt.
+--- ENDE TEST-AUSWERTUNG ---
