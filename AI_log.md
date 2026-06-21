@@ -52,3 +52,22 @@
 ### Welche Teile mussten Sie selbst verstehen, um das Schema mündlich begründen zu können?
 
 # Alles tatsächlich. Sobald man etwas nicht versteht, kommen die Fehler und eben wenn man davor mehrere Level gemact hat, MUSS man zumindest ein wenig Verständnis dafür aufbringen. Zu 100prozent habe ich es dennoch nicht verstanden bzw teile nicht richtig verstandne, dass gebe ich zu! Aber ein Grundverständnis habe ich mir erarbeitet!
+
+
+
+## Level 5
+
+**Welche Teile meines bisherigen Codes waren KI-generiert?**
+Viele Teile waren mit KI-Unterstützung entstanden, aber immer unter meiner Kontrolle. Ich habe geprüft, ob der Code Sinn ergibt, und bei Unklarheiten nachrecherchiert oder nachgefragt, statt es einfach zu übernehmen. 
+
+**Wie habe ich überprüft, dass ich den Code wirklich verstehe?**
+Ich bin den Code über mehrere Stunden immer wieder durchgegangen, habe mir einzelne Bedingungen Schritt für Schritt selbst durchgerechnet und bei Fehlern (NameError, Tippfehler, falsche Ordnerstruktur) so lange nachgeforscht, bis ich die Ursache wirklich verstanden hatte, statt nur die Fehlermeldung wegzuklicken.
+
+**Wo hat KI bei der Wartung geholfen?**
+Die KI hat mir geholfen, indem sie Fehler gefunden hat, die ich selbst übersehen hatte (z. B. doppelt vergebene Test-IDs), und mir Zusammenhänge erklärt hat, die mir vorher nicht klar waren – das hat die Arbeit insgesamt leichter und schneller gemacht, ohne dass mir die Entscheidungen abgenommen wurden.
+
+**Wo war KI gefährlich / hat etwas übersehen?**
+KI ist grundsätzlich dann gefährlich, wenn man kein eigenes Konzept hat und ihr blind vertraut, statt die Vorschläge zu hinterfragen. Auch in meinem Fall sind sicher nicht alle Vorschläge auf Anhieb perfekt gewesen – ich habe versucht, so genau und präzise wie möglich zu bleiben und alles selbst zu kontrollieren, statt mich blind zu verlassen.
+
+**Wie habe ich nachgewiesen, dass meine Änderungen keine Regressionen erzeugt haben?**
+Ich habe nach jeder Änderung alle drei bestehenden Testskripte (`main.py`, `test_setup_reg.py`, `test_xml_export.py`) erneut nacheinander ausgeführt und die Ergebnisse mit dem Stand vor der Änderung verglichen. Alle Ergebnisse wurden im `regression_test_run.log` dokumentiert.
