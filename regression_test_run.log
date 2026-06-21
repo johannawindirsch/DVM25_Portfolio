@@ -1,0 +1,90 @@
+# regression_test_run.log
+
+## Zweck
+Dieses Protokoll weist nach, dass alle zentralen Funktionen aus Level 1-4
+nach den Änderungen aus Level 5 (AF17, AF18, AF20) weiterhin korrekt
+funktionieren. Die Tests wurden nach Abschluss aller Code-Änderungen erneut
+ausgeführt.
+
+## Geprüfte Funktionen (Übersicht)
+
+| Bereich | Geprüft durch | Funktionen |
+|---|---|---|
+| Level 1 - Vorsortierung | `main.py` | Formatpruefung (AF1/AF2), 0-Byte-Loeschung (AF3), neu: PNG-Unterstuetzung (AF17) |
+| Level 2 - Registrierung | `test_setup_reg.py` | Eingangsstempel (AF4), Tages-Sequenz (AF5), Aktenzuordnung (AF6), interaktiver Laufzettel (AF7) |
+| Level 3 - Metadaten | `test_setup_reg.py` | JSON-Begleitdatei (AF8), Basis-Metadaten (AF9, neu: registrierungsdatum statt erstellungsdatum / AF18), Aufbewahrung (AF10), Vertraulichkeit (AF11) |
+| Level 4 - XML-Export | `test_xml_export.py` | Datenmodell-Konformitaet (AF12/13), XML-Export (AF14), XSD-Validierung (AF15) |
+
+## Während der Wartung gefundene und behobene Fehler
+
+1. **Tippfehler im Test-Fixture (`test_xml_export.py`):** Beim Testen der
+   AF18-Abwaertskompatibilitaet wurde der JSON-Key versehentlich als
+   `"erstellungsdatumm"` (doppeltes m) geschrieben. Dadurch griff die
+   Fallback-Logik nicht, und der hartcodierte Standardwert wurde exportiert.
+   Behoben durch Korrektur des Tippfehlers; danach erneut getestet (PASS,
+   korrekter Wert im Export).
+
+2. **Strukturfehler im Test-Fixture (`test_xml_export.py`):** Die
+   Test-JSON-Datei lag in `test_akten/Projekt_X/Dokument_A/test_doc.json`,
+   eine Ordnerebene zu tief fuer die Logik in `xml_export.py` (die nur eine
+   Ebene durchsucht). Dadurch wurde nie ein `<dokument>`-Element erzeugt -
+   der Fehler blieb zuvor unbemerkt, weil `dokument` im XSD `minOccurs="0"`
+   hat und eine leere Akte ebenfalls schemakonform ist. Behoben durch
+   Entfernen der ueberfluessigen Zwischenebene; danach erneut getestet
+   (PASS, `<dokument>` korrekt vorhanden).
+
+## Testlauf nach Abschluss aller Aenderungen (AF17, AF18, AF20)
+
+### Level 1 (main.py)
+```
+--- STARTE TEST-AUSWERTUNG ---
+[PASS] T01a (AF1): antrag_normal.pdf ist weiterhin im Posteingang.
+[PASS] T01b (AF1): notiz.txt ist weiterhin im Posteingang.
+[PASS] T01c (AF1): bild.jpg ist weiterhin im Posteingang.
+[PASS] T01d (AF1): datei_groß.PDF ist weiterhin im Posteingang.
+[PASS] T18 (AF17): bild_neu.png ist weiterhin im Posteingang.
+[PASS] T02a (AF2): virus.exe ist in der Isolierstation.
+[PASS] T02b (AF2): update.zip ist in der Isolierstation.
+[PASS] T03 (AF2): datei_ohne-endung ist in der Isolierstation.
+[PASS] T04 (AF3): Leere Dateien mit 0 Byte wurden gelöscht.
+[PASS] T05 (AF3): Leere Dateien mit 0 Byte wurden gelöscht.
+--- ENDE TEST-AUSWERTUNG ---
+```
+
+### Level 2-3 (test_setup_reg.py)
+```
+=== START DER AUTOMATISCHEN AUSWERTUNG ===
+[PASS] T06 - AF4: Datum korrekt im Dateinamen gefunden.
+[PASS] T07 - AF5: Nummer 001 existiert.
+[PASS] T07a - AF5: Nummerierung korrekt auf 002.
+[PASS] T07b - AF5: Split-Logik zur Nummern-Erkennung erfolgreich.
+[PASS] T08 - AF6: Unterverzeichnis 'Gehaltsnachweise_2026' erstellt.
+[PASS] T08a - AF6: Datei erfolgreich in Akte verschoben.
+[PASS] T08b - AF6: Zweite Akte 'Projekt_NEU' erfolgreich erstellt.
+[PASS] T09 - AF7: Logik bereit für interaktive Abfrage.
+[PASS] T10 - AF8: .json-Begleitdateien existieren im jeweiligen Aktenordner.
+[PASS] T11- AF9: Keys 'dokumenten_typ' und 'registrierungsdatum' erfolgreich verifiziert.
+[PASS] T12- AF10: Key 'aufbewahrung_bis' für Löschfristen (US2) erfolgreich verifiziert.
+[PASS] T13- AF11: Key 'vertraulichkeit' für Datenschutz (US3) erfolgreich verifiziert.
+=== AUSWERTUNG BEENDET ===
+```
+
+### Level 4 (test_xml_export.py)
+```
+--- STARTE TEST-AUSWERTUNG ---
+--- Starte Export ---
+XML-Datei erfolgreich unter 'test_export.xml' erstellt.
+Starte XSD-Validierung...
+ERFOLG: XML ist valide!
+[PASS] T15: Export aus DMS-Datenbestand erfolgreich.
+[PASS] T14: XML-Struktur entspricht exakt den Vorgaben aus dms_export.xsd.
+[PASS] T16: Validierung der XML gegen XSD erfolgreich.
+[PASS] T17: Fehlerhafte XML wurde korrekt abgelehnt.
+```
+
+## Ergebnis
+Alle 22 vor den Level-5-Änderungen bestehenden bzw. neu ergänzten Tests
+(T01-T18) laufen weiterhin bzw. erstmalig auf PASS. Es wurde keine
+Regression durch AF17, AF18 oder AF20 festgestellt. Die zwei während der
+Wartungsarbeiten gefundenen Fehler waren reine Test-Fixture-Probleme
+(siehe oben), keine Fehler in der produktiven Logik.

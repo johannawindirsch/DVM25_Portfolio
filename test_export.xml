@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dms_export>
+    <export_datum>2026-06-21T10:46:13.731775</export_datum>
+    <akte>
+        <akten_name>Projekt_X</akten_name>
+        <dokument>
+            <dateiname>test_doc</dateiname>
+            <metadaten>
+                <dokumenten_typ>Rechnung</dokumenten_typ>
+                <registrierungs_datum>2026-06-08</registrierungs_datum>
+                <aufbewahrung_bis>2036-01-01</aufbewahrung_bis>
+                <vertraulichkeit>intern</vertraulichkeit>
+            </metadaten>
+        </dokument>
+    </akte>
+</dms_export>

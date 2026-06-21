@@ -1,0 +1,5 @@
+# Ignoriere Systemdateien von macOS
+.DS_Store
+
+__pycache__
+
