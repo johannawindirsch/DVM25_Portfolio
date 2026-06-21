@@ -105,6 +105,21 @@ Unterschied im Verhalten für nachgelagerte Systeme wie den XML-Export.
 nachträgliche Bearbeitung. Beim XML-Export werden sie automatisch über die
 Fallback-Logik in `xml_export.py` erkannt und korrekt verarbeitet.
 
-
 # Alle 22 bestehenden Tests laufen nach der Änderung weiterhin auf PASS – keine Regression festgestellt (vollständiges Protokoll siehe test_run.log).
 
+
+
+### Level 5 - Task 4 -- AF20 - Wartbarkeit
+
+**Gewählte Stelle:** `triage.py`, Funktion `run_triage()` – die Liste `erlaubte_endungen` ist aktuell lokal innerhalb der Funktion definiert.
+
+**Begründung & Ziele:** Eine Liste mit fachlichen Regeln (welche Dateiformate sind erlaubt) sollte als gut sichtbare, benannte Konstante am Dateianfang stehen statt in einer Funktion versteckt zu sein. Das bringt drei Vorteile:
+1. **Sichtbarkeit:** Die fachliche Regel ist sofort erkennbar, ohne erst in die Funktion schauen zu müssen.
+2. **Wiederverwendbarkeit:** Andere Funktionen in der Datei könnten künftig ebenfalls auf dieselbe Liste zugreifen, statt sie zu duplizieren.
+3. **Wartungsfreundlichkeit:** Künftige Änderungen (z. B. ein weiteres erlaubtes Format) lassen sich an einer klar erkennbaren Stelle vornehmen, statt im Funktionskörper danach zu suchen.
+
+**Ist-Zustand (was der Code aktuell macht):** In `triage.py`, Funktion `run_triage()`, wird die Liste `erlaubte_endungen` (`.pdf`, `.txt`, `.jpg`, `.png`) bei jedem Aufruf der Funktion neu lokal erzeugt. Die `elif`-Bedingung prüft für jede Datei im Posteingang, ob ihre Endung NICHT in dieser Liste enthalten ist – falls ja, wird die Datei in die Isolierstation verschoben, andernfalls bleibt sie im Posteingang. Die Liste ist aktuell nur innerhalb der Funktion sichtbar und nicht zentral wiederverwendbar.
+
+**Nachweis:** Tests vor und nach der Umstellung liefern identische Ergebnisse (alle 10 Tests PASS, gleiche Dateizuordnung). Das fachliche Verhalten ist unverändert, nur die Codestruktur wurde verbessert. Siehe test_run_log
+
+-
